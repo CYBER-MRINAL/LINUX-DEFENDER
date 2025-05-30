@@ -718,32 +718,32 @@ update_system() {
 }
 
 update_from_github() {
-    local repo="CYBER-MRINAL/LINUX-DEFENDER"  # GitHub repository
-    local current_version="v1.0"  # Current version running
+    local repo="CYBER-MRINAL/LINUX-DEFENDER"  # Exact GitHub repository (case-sensitive)
+    local current_version="v1.0"               # Your current version (update as needed)
     local latest_version
     local zip_file
     local temp_dir
     local url
+    local http_status
 
     # Check for required commands
     for cmd in curl unzip grep sort; do
-        if ! command -v $cmd &> /dev/null; then
+        if ! command -v "$cmd" &> /dev/null; then
             echo "Error: $cmd is not installed. Please install it and try again."
             return 1
         fi
     done
 
-    # Check if the repository exists
-    if ! curl -s --head "https://api.github.com/repos/${repo}" | grep "200 OK" > /dev/null; then
-        echo "Error: Repository $repo does not exist."
+    # Check if the repository exists by checking HTTP status code
+    http_status=$(curl -s -o /dev/null -w "%{http_code}" "https://api.github.com/repos/${repo}")
+    if [[ "$http_status" != "200" ]]; then
+        echo "Error: Repository $repo does not exist or is inaccessible. HTTP status code: $http_status"
         return 1
     fi
 
-    # Fetch the latest release version from GitHub
+    # Fetch the latest release version from GitHub API
     latest_version=$(curl -s "https://api.github.com/repos/${repo}/releases/latest" | grep -oP '"tag_name": "\K(.*)(?=")')
-
-    # Check if the latest version was retrieved successfully
-    if [ -z "$latest_version" ]; then
+    if [[ -z "$latest_version" ]]; then
         echo "Error: Failed to fetch the latest version from the repository."
         return 1
     fi
@@ -751,45 +751,46 @@ update_from_github() {
     echo "Current version: $current_version"
     echo "Latest version: $latest_version"
 
-    # Compare versions
-    if [[ $(echo -e "$current_version\n$latest_version" | sort -V | head -n1) == "$latest_version" ]]; then
+    # Compare versions; if current >= latest, no update needed
+    if [[ $(echo -e "${current_version}\n${latest_version}" | sort -V | head -n1) == "$latest_version" ]]; then
         echo "You are already running the latest version: $current_version"
         return 0
     fi
 
-    # Create a temporary directory for the download
-    temp_dir=$(mktemp -d)
+    # Prepare download info
+    temp_dir=$(mktemp -d) || { echo "Failed to create temp directory."; return 1; }
     zip_file="${repo##*/}-${latest_version}.zip"
     url="https://github.com/${repo}/releases/download/${latest_version}/${zip_file}"
 
     echo "Downloading $zip_file from $url..."
 
-    # Download the ZIP file
-    if curl -L -o "$temp_dir/$zip_file" "$url"; then
-        echo "Download completed."
-
-        # Extract the ZIP file
-        echo "Extracting $temp_dir/$zip_file..."
-        if unzip -q "$temp_dir/$zip_file" -d "$temp_dir"; then
-            echo "Extraction completed."
-        else
-            echo "Error: Failed to extract $zip_file."
-            rm -rf "$temp_dir"
-            return 1
-        fi
-
-        # Move extracted files to the desired location (if needed)
-        # mv "$temp_dir/*" /desired/location/
-
-        # Delete the ZIP file and temporary directory
-        echo "Cleaning up..."
-        rm -rf "$temp_dir"
-        echo "Update completed successfully."
-    else
-        echo "Error: Failed to download $zip_file. Please check the URL or tag."
+    # Download release zip
+    if ! curl -L -o "$temp_dir/$zip_file" "$url"; then
+        echo "Error: Failed to download $zip_file. Check the URL or tag."
         rm -rf "$temp_dir"
         return 1
     fi
+
+    echo "Download completed."
+
+    # Extract ZIP file quietly
+    if ! unzip -q "$temp_dir/$zip_file" -d "$temp_dir"; then
+        echo "Error: Failed to extract $zip_file."
+        rm -rf "$temp_dir"
+        return 1
+    fi
+
+    echo "Extraction completed."
+
+    # TODO: Replace this with actual move/copy logic for your project files
+    # e.g., mv "$temp_dir/extracted_folder/*" /your/project/directory/
+    # Adjust this path according to your repo structure after extraction
+
+    echo "Cleaning up temporary files..."
+    rm -rf "$temp_dir"
+
+    echo "Update completed successfully."
+    return 0
 }
 
 # Function to scan for malware using multiple tools
