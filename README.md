@@ -47,7 +47,7 @@ It automates the installation and configuration of key security tools across pop
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/CYBER-MRINAL/Linux-Defender.git
+git clone https://github.com/CYBER-MRINAL/LINUX-DEFENDER.git
 cd Linux-Defender
 chmod +x setup.py
 ./setup.py
