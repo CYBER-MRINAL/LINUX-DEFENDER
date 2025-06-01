@@ -1587,7 +1587,7 @@ check_integrity() {
                     ;;
             "ls")
                 echo -e "\033[1;32m" "\nCheck File Integrity Option (CFIO):"
-                echo "  cfin - Check File Integrity in normal way. (WITHOUT_COLOR)"
+                echo "  cfin   - Check File Integrity in normal way. (WITHOUT_COLOR)"
                 echo "  cfiv   - Check File Integrity in verbose way. (WITH_COLOR)"
                 echo -e "\033[0m"  # Reset color
                 ;;
