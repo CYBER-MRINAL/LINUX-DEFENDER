@@ -6,11 +6,11 @@ import sys
 
 arch_packages = [
     "tor", "torctl", "chkrootkit", "clamav", "audit", "iptables",
-    "ufw", "inotify-tools", "rkhunter", "inxi"
+    "ufw", "inotify-tools", "rkhunter", "inxi", "xterm"
 ]
 debian_packages = [
     "tor", "chkrootkit", "clamav", "auditd", "iptables",
-    "ufw", "inotify-tools", "rkhunter", "inxi"
+    "ufw", "inotify-tools", "rkhunter", "inxi", "xterm"
 ]
 
 def run_cmd(command):
