@@ -90,6 +90,16 @@ display_scan_welcome() {
     echo -e "\033[0m"  # Reset color
 }
 
+# Function to display colorful welcome message for ai
+display_ai_welcome() {
+    echo -e "\033[1;32m"  # Green color
+    echo "                       <<========================================>>"
+    echo "                         <<-WELCOME-TO-ARTIFICIAL-INTELLIGENCE->>"
+    echo "                       <<========================================>>"
+    echo "                                   <<-=-CYBER-MRINAL-=->>       "
+    echo -e "\033[0m"  # Reset color
+}
+
 # Function to display colorful welcome message for traffic
 display_traffic_welcome() {
     echo -e "\033[1;32m"  # Green color
@@ -224,6 +234,11 @@ run_user_commands() {
                 manage_firewall
                 current_section="HOME"
                 ;;
+            "cd ai")
+                current_section="AI"
+                chat_ai
+                current_section="HOME"
+                ;;
             "cd supdate")
                 current_section="SUPDATE"
                 update_system
@@ -283,6 +298,7 @@ run_user_commands() {
                 ;;
             "ls")
                 echo -e "\033[1;32m" "\nAvailable Security Tools (AST):"
+                echo "  ai       - Chat with ai"
                 echo "  cfi      - Check file integrity manager"
                 echo "  css      - Check system status"
                 echo "  ufw      - Manage UFW firewall rules"
@@ -719,7 +735,7 @@ update_system() {
 
 update_from_github() {
     local repo="CYBER-MRINAL/LINUX-DEFENDER"  # Exact GitHub repository (case-sensitive)
-    local current_version="v1.0"               # Your current version (update as needed)
+    local current_version="v1.1"               # Your current version (update as needed)
     local latest_version
     local zip_file
     local temp_dir
@@ -878,6 +894,206 @@ scan_for_danger() {
                 ;;
             *)
                 echo "-->> Invalid Command. Please use show to see the commands."
+                ;;
+        esac
+
+        # Save history to file
+        history -a "$HISTORY_FILE"
+    done
+}
+
+# Function to chat or work with ai
+chat_ai() {
+    local current_section="AI"
+
+    # Load history from file if it exists
+    if [[ -f "$HISTORY_FILE" ]]; then
+        history -r "$HISTORY_FILE"
+    fi
+
+    while true; do
+        read -e -p " {LINUX-DEFENDER}-{${current_section}}-->> " option
+
+        # Exit the loop if the user types 'exit'
+        if [[ "$option" == "exit" ]]; then
+            break
+        fi
+
+        # If the input is empty, continue to the next iteration
+        if [[ -z "$option" ]]; then
+            continue
+        fi
+
+        # Add the command to history
+        history -s "$option"
+
+        case $option in
+            "intarch")
+                echo -e "\033[1;32m"
+                echo "    <<==={INSTALLING-TGPT}===>>"
+                echo -e "\033[0m"  # Reset color
+                sudo pacman -S tgpt --noconfirm
+                log_message "INFO" "TGPT installing for arch."
+                send_alert "TGPT INSTALLING FOR ARCH."
+                ;;
+            "intdeb")
+                echo -e "\033[1;32m"
+                echo "    <<==={INSTALLING-TGPT}===>>"
+                echo -e "\033[0m"  # Reset color
+                sudo curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | bash -s /usr/local/bin
+                log_message "INFO" "TGPT installing for debian based distro."
+                send_alert "TGPT INSTALLING FOR DEBIAN."
+                ;;
+            "aiup")
+                echo -e "\033[1;32m"
+                echo "    <<==={UPDATING-TGPT}===>>"
+                echo -e "\033[0m"  # Reset color
+                sudo tgpt -u
+                log_message "INFO" "TGPT updating."
+                send_alert "TGPT UPDATING."
+                ;;
+            "aint")
+                echo -e "\033[1;32m"
+                echo "    <<==={INTERACTIVE-TGPT}===>>"
+                echo -e "\033[0m"  # Reset color
+                tgpt -i
+                log_message "INFO" "TGPT in interactive mode."
+                send_alert "TGPT INTERACTIVE MODE."
+                ;;
+            "aindev")
+                echo -e "\033[1;32m"
+                echo "    <<==={INTERACTIVE-DEVLOOPER-TGPT}===>>"
+                echo -e "\033[0m"  # Reset color
+                tgpt --provider phind -i
+                log_message "INFO" "TGPT in interactive devloper mode."
+                send_alert "TGPT INTERACTIVE DEVLOPER MODE."
+                ;;
+            "aichat")
+                echo -e "\033[1;32m"
+                echo "    <<==={CHAT-WITH-TGPT}===>>"
+                echo -e "\033[0m"  # Reset color
+                tgpt -m
+                log_message "INFO" "TGPT in normal chat mode."
+                send_alert "TGPT CHAT MODE."
+                ;;
+            "aidev")
+                echo -e "\033[1;32m"
+                echo "    <<==={DEVLOPER-TGPT}===>>"
+                echo -e "\033[0m"  # Reset color
+                
+                # Prompt for user input
+                echo -e "\033[1;31m"
+                read -p "  (YOUR-IDEA) ->> " user_prompt
+                echo -e "\033[0m"
+                
+                # Execute tgpt with user input
+                tgpt --provider phind "$user_prompt"
+                
+                log_message "INFO" "TGPT in interactive mode with user prompt."
+                send_alert "TGPT INTERACTIVE MODE WITH PROMPT."
+                ;;
+            "aishell")
+                echo -e "\033[1;32m"
+                echo "    <<==={DEVLOPER-TGPT}===>>"
+                echo -e "\033[0m"  # Reset color
+                
+                # Prompt for user input
+                echo -e "\033[1;31m"
+                read -p "  (YOUR-QUERRY) ->> " user_prompt
+                echo -e "\033[0m"
+                
+                # Execute tgpt with user input
+                tgpt -s "$user_prompt"
+                
+                log_message "INFO" "TGPT in shell mode with user prompt."
+                send_alert "TGPT SHELL MODE WITH PROMPT."
+                ;;
+            "aisim")
+                echo -e "\033[1;32m"
+                echo "    <<==={SIMPLE-TGPT}===>>"
+                echo -e "\033[0m"  # Reset color
+                
+                # Prompt for user input
+                echo -e "\033[1;31m"
+                read -p "  (YOUR-QUERRY) ->> " user_prompt
+                echo -e "\033[0m"
+                
+                # Execute tgpt with user input
+                tgpt "$user_prompt"
+                
+                log_message "INFO" "TGPT in SIMPLE mode with user prompt."
+                send_alert "TGPT SIMPLE MODE WITH PROMPT."
+                ;;
+            "aimg")
+                echo -e "\033[1;32m"
+                echo "    <<==={IMAGE-TGPT}===>>"
+                echo -e "\033[0m"  # Reset color
+                
+                # Prompt for user input
+                echo -e "\033[1;31m"
+                read -p "  (YOUR-IMAGE-IDEA) ->> " user_prompt
+                echo -e "\033[0m"
+                
+                # Execute tgpt with user input
+                tgpt --provider phind "$user_prompt"
+                
+                log_message "INFO" "TGPT in image generator mode with user prompt."
+                send_alert "TGPT IMAGE GENERATOR MODE WITH PROMPT."
+                ;;
+            "aiasc")
+                echo -e "\033[1;32m"
+                echo "    <<==={ASCII-TGPT}===>>"
+                echo -e "\033[0m"  # Reset color
+                
+                # Prompt for user input
+                echo -e "\033[1;31m"
+                read -p "  (YOUR-ASCII-IDEA) ->> " user_prompt
+                echo -e "\033[0m" 
+                
+                # Execute tgpt with user input
+                tgpt --provider pollinations "$user_prompt"
+                
+                log_message "INFO" "TGPT in ascii image generator mode with user prompt."
+                send_alert "TGPT ASCII IMAGE GENERATOR MODE WITH PROMPT."
+                ;;
+            "help")
+                echo -e "\033[1;32m" "\nAI Help (AIH):"
+                echo "  ls     - Show the available security options to start Tor."
+                echo "  cd ..  - Return to the main menu."
+                echo "  clear  - Clear the terminal."
+                echo "  banner - Show the banner."
+                echo -e "\033[0m"  # Reset color
+                ;;
+            "ls")
+                echo -e "\033[1;32m" "\nAI Options (AIO):"
+                echo "   aint     - TGPT in interactive mode."
+                echo "   aiup     - Update TGPT (specally for debian)."
+                echo "   aimg     - TGPT in image generator mode."
+                echo "   aiasc    - TGPT in ascii image generator mode."
+                echo "   aisim    - TGPT in simple mode."
+                echo "   aidev    - TGPT in Devloper mode."
+                echo "   aichat   - TGPT in normal chat mode."
+                echo "   aindeb   - TGPT in interactive devloper mode."
+                echo "   aishell  - TGPT for ask command or execute command mode."
+                echo "   "
+                echo "> INSTALL TGPT"
+                echo "   intdeb   - Install TGPT for debian based distro (including kali, ubuntu, parrot)."
+                echo "   intarch  - Install TGPT for arch linux."
+                echo -e "\033[0m"  # Reset color
+                ;;
+            "banner")
+                display_ai_welcome
+                ;;
+            "clear")
+                clear  # Clear the terminal
+                ;;
+            "cd ..")
+                return  # Exit the scan management section and go back to the main menu
+                ;;
+            *)
+                echo -e "\033[1;31m"
+                echo "-->> Invalid Command. Please use show to see the commands."
+                echo -e "\033[0m"  # Reset color
                 ;;
         esac
 
