@@ -18,6 +18,7 @@ It automates the installation and configuration of key security tools across pop
 - 🦠 **Malware & rootkit scanners**: `chkrootkit`, `rkhunter`, `clamav`
 - 🔍 **Audit daemon** for system activity: `audit` / `auditd`
 - 🌐 **TOR support** and optional **Anonsurf** for Kali
+- **AI Implemented** now i added tgpt for ai support and your query solution
 - ⚙️ Auto-detection of distro: Arch, Debian, Kali, Parrot
 - 💣 Fail-safe: gives manual package install instructions on failure
 
@@ -41,6 +42,7 @@ It automates the installation and configuration of key security tools across pop
 | Monitoring         | `audit` / `auditd`, `inotify-tools`, `inxi`      |
 | Anonymity (Kali)   | `tor`, [`kali-anonsurf`](https://github.com/Und3rf10w/kali-anonsurf) |
 | Arch-only Tool     | `torctl`                                         |
+| AI                 | `TGPT`                                           |
 
 ---
 
