@@ -71,7 +71,7 @@ sudo ./Linux-Defender.sh
 
 This will initiate all hardening operations tailored for your Linux system.
 --- 
-![LINUX-DEFENDER](https://github.com/user-attachments/assets/85301aaa-5615-438d-b9d0-e64e9200b96f)
+![Screenshot From 2025-06-16 12-07-38](https://github.com/user-attachments/assets/1bd77fa4-4621-4669-8d23-896667743fca)
 ---
 
 ## 🧾 License
