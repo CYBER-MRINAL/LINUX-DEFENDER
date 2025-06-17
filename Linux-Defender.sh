@@ -1035,7 +1035,7 @@ chat_ai() {
                 echo -e "\033[0m"
                 
                 # Execute tgpt with user input
-                tgpt --provider phind "$user_prompt"
+                tgpt --img "$user_prompt"
                 
                 log_message "INFO" "TGPT in image generator mode with user prompt."
                 send_alert "TGPT IMAGE GENERATOR MODE WITH PROMPT."
