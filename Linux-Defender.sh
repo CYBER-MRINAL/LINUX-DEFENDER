@@ -216,14 +216,14 @@ run_user_commands() {
                 break
                 ;;
             "help")
-                echo -e "\033[1;32m" "\nAvailable Commands (AC):"
-                echo "  ls        - List avaliable security tools in this framework"
-                echo "  cd        - To enter New Choosen Section (cd ufw)"
-                echo "  cd ..     - To get back from one section to HOME menu"
-                echo "  clear     - Clear the terminal"
-                echo "  exit      - Exit the command interface"
-                echo "  banner    - To show the banner"
-                echo "  welcome   - To show the welcome banner"
+                echo -e "\033[1;32m" "\nAVALIABLE COMMANDS (AC):"
+                echo " 1. ls        - List avaliable security tools in this framework"
+                echo " 2. cd        - To enter New Choosen Section (cd ufw)"
+                echo " 3. cd ..     - To get back from one section to HOME menu"
+                echo " 4. clear     - Clear the terminal"
+                echo " 5. exit      - Exit the command interface"
+                echo " 6. banner    - To show the banner"
+                echo " 7. welcome   - To show the welcome banner"
                 echo ""
                 echo -e "\033[1;31m"  # Red color
                 echo ">> By pressing CTRL+C the whole script stops (BE CAREFULL)"
@@ -297,18 +297,18 @@ run_user_commands() {
                 current_section="HOME"  # Only set to HOME when "back" is entered
                 ;;
             "ls")
-                echo -e "\033[1;32m" "\nAvailable Security Tools (AST):"
-                echo "  ai       - Chat with ai"
-                echo "  cfi      - Check file integrity manager"
-                echo "  css      - Check system status"
-                echo "  ufw      - Manage UFW firewall rules"
-                echo "  scan     - Scan and find malware and rootkit"
-                echo "  anon     - Anonymous network traffic manager"
-                echo "  backup   - Backup critical files"
-                echo "  report   - Generate a report of your whole system"
-                echo "  supdate  - Update the distribution "
-                echo "  tupdate  - Update to the latest veriosn of this tool."
-                echo "  monitor  - Monitor files and changes while testing something on system."
+                echo -e "\033[1;32m" "\nAVALIABLE DIRECTORIES (AD):"
+                echo " 1.  ai       - Chat with ai"
+                echo " 2.  cfi      - Check file integrity manager"
+                echo " 3.  css      - Check system status"
+                echo " 4.  ufw      - Manage UFW firewall rules"
+                echo " 5.  scan     - Scan and find malware and rootkit"
+                echo " 6.  anon     - Anonymous network traffic manager"
+                echo " 7.  backup   - Backup critical files"
+                echo " 8.  report   - Generate a report of your whole system"
+                echo " 9.  supdate  - Update the distribution "
+                echo " 10. tupdate  - Update to the latest veriosn of this tool."
+                echo " 11. monitor  - Monitor files and changes while testing something on system."
                 echo -e "\033[0m"
                 ;;
             *)
@@ -572,10 +572,10 @@ manage_firewall() {
                 ;;
             "help")
                 echo -e "\033[1;32m" "\nUFW Help (UFWH):"
-                echo "  ls     - To List preset UFW rules for use"
-                echo "  cd ..  - To get back to the HOME Menu."
-                echo "  clear  - Clear the terminal."
-                echo "  banner - Show the banner of UFW"
+                echo " 1. ls     - To List preset UFW rules for use"
+                echo " 2. cd ..  - To get back to the HOME Menu."
+                echo " 3. clear  - Clear the terminal."
+                echo " 4. banner - Show the banner of UFW"
                 echo ""
                 echo -e "\033[1;31m"  # Red color
                 echo ">> By pressing CTRL+C the whole script stops (BE CAREFULL)"
@@ -583,34 +583,34 @@ manage_firewall() {
                 ;;
             "ls")
                 echo -e "\033[1;32m" "Available Options (AO):"
-                echo "  enable    - Enable UFW"
-                echo "  disable   - Disable UFW"
-                echo "  assh      - Allow SSH"
-                echo "  dssh      - Deny SSH"
-                echo "  ahttp     - Allow HTTP"
-                echo "  dhttp     - Deny HTTP"
-                echo "  ahttps    - Allow HTTPS"
-                echo "  dhttps    - Deny HTTPS"
-                echo "  aftp      - Allow FTP "
-                echo "  dftp      - Deny FTP "
-                echo "  aping     - Allow Ping (ICMP)"
-                echo "  dping     - Deny Ping (ICMP)"
-                echo "  adns      - Allow DNS "
-                echo "  ddns      - Deny DNS "
-                echo "  asmtp     - Allow SMTP"
-                echo "  dsmtp     - Deny SMTP"
-                echo "  apop3     - Allow POP3"
-                echo "  dpop3     - Deny P0P3"
-                echo "  aimap     - Allow IMAP"
-                echo "  dimap     - Deny IAMP"
-                echo "  deny-all  - Deny all Internet Traffic"
-                echo "  den-in    - Deny all incoming Traffic"
-                echo "  alw-out   - Allow Outgoing Traffic"
-                echo "  den-out   - Deny Outgoing Traffic"
-                echo "  urest     - Reset the UFW and take it to normal"
-                echo "  uload     - Reload the UFW "
-                echo "  statv     - Show UFW status in verbose."
-                echo "  statn     - Show UFW status in numbered."
+                echo " 1.   enable    - Enable UFW"
+                echo " 2.   disable   - Disable UFW"
+                echo " 3.   assh      - Allow SSH"
+                echo " 4.   dssh      - Deny SSH"
+                echo " 5.   ahttp     - Allow HTTP"
+                echo " 6.   dhttp     - Deny HTTP"
+                echo " 7.   ahttps    - Allow HTTPS"
+                echo " 8.   dhttps    - Deny HTTPS"
+                echo " 9.   aftp      - Allow FTP "
+                echo " 10.  dftp      - Deny FTP "
+                echo " 11.  aping     - Allow Ping (ICMP)"
+                echo " 12.  dping     - Deny Ping (ICMP)"
+                echo " 13.  adns      - Allow DNS "
+                echo " 14.  ddns      - Deny DNS "
+                echo " 15.  asmtp     - Allow SMTP"
+                echo " 16.  dsmtp     - Deny SMTP"
+                echo " 17.  apop3     - Allow POP3"
+                echo " 18.  dpop3     - Deny P0P3"
+                echo " 19.  aimap     - Allow IMAP"
+                echo " 20.  dimap     - Deny IAMP"
+                echo " 21.  deny-all  - Deny all Internet Traffic"
+                echo " 22.  den-in    - Deny all incoming Traffic"
+                echo " 23.  alw-out   - Allow Outgoing Traffic"
+                echo " 24.  den-out   - Deny Outgoing Traffic"
+                echo " 25.  urest     - Reset the UFW and take it to normal"
+                echo " 26.  uload     - Reload the UFW "
+                echo " 27.  statv     - Show UFW status in verbose."
+                echo " 28.  statn     - Show UFW status in numbered."
                 echo -e "\033[0m"  # Reset color
                 ;;
             "cd ..")
@@ -695,11 +695,11 @@ update_system() {
                 fi
                 ;;
             "help")
-                echo -e "\033[1;32m" "\nSUPDATE Help (SUPH):"
-                echo "   ls     - List all preset commands"
-                echo "   cd ..  - To get back the HOME Menu."
-                echo "   clear  - Clear the terminal."
-                echo "   banner - Show  the banner"
+                echo -e "\033[1;32m" "\nSUPDATE HELP (SUPH):"
+                echo " 1. ls     - List all preset commands"
+                echo " 2. cd ..  - To get back the HOME Menu."
+                echo " 3. clear  - Clear the terminal."
+                echo " 4. banner - Show  the banner"
                 echo ""
                 echo -e "\033[1;31m"  # Red color
                 echo ">> By pressing CTRL+C the whole script stops (BE CAREFULL)"
@@ -712,12 +712,12 @@ update_system() {
                 display_supdate_welcome
                 ;;
             "ls")
-                echo -e "\033[1;32m" "\nCoose Your Distro Type (CYDT):"
-                echo ">  deb   - Update Ubuntu/Debain system"
-                echo ">  pdeb  - Update parrot os"
-                echo ">  kdeb  - Update Kali linux"
-                echo ">  arch  - Update Arch"
-                echo ">  rhat  - Update Red Hat/CentOS/Fedora"
+                echo -e "\033[1;32m" "\nCOOSE YOUR DISTRO TYPE (CYDT):"
+                echo " 1. deb   - Update Ubuntu/Debain system"
+                echo " 2. pdeb  - Update parrot os"
+                echo " 3. kdeb  - Update Kali linux"
+                echo " 4. arch  - Update Arch"
+                echo " 5. rhat  - Update Red Hat/CentOS/Fedora"
                 echo -e "\033[0m"  # Reset color
                 ;;
             "cd ..")
@@ -864,21 +864,36 @@ scan_for_danger() {
                 fi
                 scan_pid=0  # Reset PID after completion
                 ;;
+            "crkit")
+                log_message "INFO" "Checking for rootkits using chrootkit..."
+                sudo chkrootkit | tee -a $LOGFILE &
+                scan_pid=$!  # Store the PID of the background process
+                wait "$scan_pid"  # Wait for the scan to complete
+                if [[ $? -eq 0 ]]; then
+                    send_alert "Rootkit check completed. No issues found."
+                    log_message "INFO" "Rootkit check completed. No issues found."
+                else
+                    send_alert "Rootkit check completed. Issues found! Check the log for details."
+                    log_message "WARNING" "Rootkit check completed. Issues found!"
+                fi
+                scan_pid=0  # Reset PID after completion
+                ;;
             "help")
-                echo -e "\033[1;32m" "\nSCAN Help (SCANH):"
-                echo "  ls     - Show the available security tools for scan"
-                echo "  cd ..  - Return to the HOME Menu."
-                echo "  clear  - Clear the terminal."
-                echo "  banner - Show the banner."
+                echo -e "\033[1;32m" "\nSCAN HELP (SCANH):"
+                echo " 1. ls     - Show the available security tools for scan"
+                echo " 2. cd ..  - Return to the HOME Menu."
+                echo " 3. clear  - Clear the terminal."
+                echo " 4. banner - Show the banner."
                 echo ""
                 echo -e "\033[1;31m"  # Red color
                 echo ">> By pressing CTRL+C the whole script stops (BE CAREFULL)"
                 echo -e "\033[0m"  # Reset color
                 ;;
             "ls")
-                echo -e "\033[1;32m" "\nSCAN Options (SCANO):"
-                echo "  clam - Scan for malware using ClamAV."
-                echo "  rkit - Check for rootkits using rkhunter."
+                echo -e "\033[1;32m" "\nSCAN COMMANDS (SCANC):"
+                echo " 1. clam  - Scan for malware using ClamAV."
+                echo " 2. rkit  - Check for rootkits using rkhunter."
+                echo " 3. crkit - Check for rootkits using chkrootkit."
                 echo "                                           "
                 echo ">> WARNING: THIS CAN TAKE TIME SO KEEP PATIENCE & PRESSING CTRL+C STOP THE WHOLE SCRIPT SO, DON'T PRESS CTRL+C NOW"
                 echo -e "\033[0m"  # Reset color
@@ -1057,28 +1072,28 @@ chat_ai() {
                 send_alert "TGPT ASCII IMAGE GENERATOR MODE WITH PROMPT."
                 ;;
             "help")
-                echo -e "\033[1;32m" "\nAI Help (AIH):"
-                echo "  ls     - Show the available security options to start Tor."
-                echo "  cd ..  - Return to the main menu."
-                echo "  clear  - Clear the terminal."
-                echo "  banner - Show the banner."
+                echo -e "\033[1;32m" "\nAI HELP (AIH):"
+                echo " 1. ls     - Show the available security options to start Tor."
+                echo " 2. cd ..  - Return to the main menu."
+                echo " 3. clear  - Clear the terminal."
+                echo " 4. banner - Show the banner."
                 echo -e "\033[0m"  # Reset color
                 ;;
             "ls")
-                echo -e "\033[1;32m" "\nAI Options (AIO):"
-                echo "   aint     - TGPT in interactive mode."
-                echo "   aiup     - Update TGPT (specally for debian)."
-                echo "   aimg     - TGPT in image generator mode."
-                echo "   aiasc    - TGPT in ascii image generator mode."
-                echo "   aisim    - TGPT in simple mode."
-                echo "   aidev    - TGPT in Devloper mode."
-                echo "   aichat   - TGPT in normal chat mode."
-                echo "   aindeb   - TGPT in interactive devloper mode."
-                echo "   aishell  - TGPT for ask command or execute command mode."
+                echo -e "\033[1;32m" "\nAI COMMANDS (AIC):"
+                echo " 1. aint     - TGPT in interactive mode."
+                echo " 2. aiup     - Update TGPT (specally for debian)."
+                echo " 3. aimg     - TGPT in image generator mode."
+                echo " 4. aiasc    - TGPT in ascii image generator mode."
+                echo " 5. aisim    - TGPT in simple mode."
+                echo " 6. aidev    - TGPT in Devloper mode."
+                echo " 7. aichat   - TGPT in normal chat mode."
+                echo " 8. aindeb   - TGPT in interactive devloper mode."
+                echo " 9. aishell  - TGPT for ask command or execute command mode."
                 echo "   "
                 echo "> INSTALL TGPT"
-                echo "   intdeb   - Install TGPT for debian based distro (including kali, ubuntu, parrot)."
-                echo "   intarch  - Install TGPT for arch linux."
+                echo " 1. intdeb   - Install TGPT for debian based distro (including kali, ubuntu, parrot)."
+                echo " 2. intarch  - Install TGPT for arch linux."
                 echo -e "\033[0m"  # Reset color
                 ;;
             "banner")
@@ -1209,36 +1224,36 @@ traffic_anony() {
                 send_alert "Tor network is stop"
                 ;;
             "help")
-                echo -e "\033[1;32m" "\nANONY Help (ANONYH):"
-                echo "  ls     - Show the available security options to start Tor."
-                echo "  cd ..  - Return to the main menu."
-                echo "  clear  - Clear the terminal."
-                echo "  banner - Show the banner."
+                echo -e "\033[1;32m" "\nANONY HELP (ANONYH):"
+                echo " 1. ls     - Show the available security options to start Tor."
+                echo " 2. cd ..  - Return to the main menu."
+                echo " 3. clear  - Clear the terminal."
+                echo " 4. banner - Show the banner."
                 echo ""
                 echo -e "\033[1;31m"  # Red color
                 echo ">> By pressing CTRL+C the whole script stops (BE CAREFULL)"
                 echo -e "\033[0m"  # Reset color
                 ;;
             "ls")
-                echo -e "\033[1;32m" "\nANONY Options (ANONYO):"
+                echo -e "\033[1;32m" "\nANONY COMMANDS (ANONYC):"
                 echo "--> WARNING: FOR KALI LINUX PLEASE INSTALL KALI-ANONSURF FORM GITHUB."
                 echo "--> INFO: My research is still going to resolv other distro tor tool."
                 echo "                                                " 
                 echo "> DEBIAN-TOR:"
-                echo "   dstart  - For parrot os, to start Tor tunnel."
-                echo "   dchnid  - For parrot os, to change Tor IP Address."
-                echo "   dstop   - For parrot os, to stop Tor tunnel."
+                echo " .1 dstart  - For parrot os, to start Tor tunnel."
+                echo " .2 dchnid  - For parrot os, to change Tor IP Address."
+                echo " .3 dstop   - For parrot os, to stop Tor tunnel."
                 echo "                                                      "
                 echo "> KALI-TOR:"
-                echo "   kstart  - For kali, to start Tor tunnel."
-                echo "   kchnid  - For kali, to change Tor IP Address."
-                echo "   kstop   - For kali, to stop Tor tunnel."
+                echo " 1. kstart  - For kali, to start Tor tunnel."
+                echo " 2. kchnid  - For kali, to change Tor IP Address."
+                echo " 3. kstop   - For kali, to stop Tor tunnel."
                 echo "                                          "
                 echo "> ARCH-TOR:"
-                echo "   astart  - For Arch, to start Tor tunnel."
-                echo "   achnid  - For Arch, to change IP address of TOR."
-                echo "   achnmc  - For Arch, to change MAC address of TOR."
-                echo "   astop   - For Arch, to stop TOR tunnel."
+                echo " 1. astart  - For Arch, to start Tor tunnel."
+                echo " 2. achnid  - For Arch, to change IP address of TOR."
+                echo " 3. achnmc  - For Arch, to change MAC address of TOR."
+                echo " 4. astop   - For Arch, to stop TOR tunnel."
                 echo -e "\033[0m"  # Reset color
                 ;;
             "banner")
@@ -1305,16 +1320,16 @@ backup_files() {
                 done
                 ;;
             "help")
-                echo -e "\033[1;32m" "\nBACKUP Help (BACKH):"
-                echo "   ls     - Show the available backup options"
-                echo "   cd ..  - to return to the main menu."
-                echo "   clear  - Clear the terminal"
-                echo "   banner - Show the banner."
+                echo -e "\033[1;32m" "\nBACKUP HELP (BACKH):"
+                echo " 1. ls     - Show the available backup options"
+                echo " 2. cd ..  - to return to the main menu."
+                echo " 3. clear  - Clear the terminal"
+                echo " 4. banner - Show the banner."
                 echo -e "\033[0m"  # Reset color
                 ;;
             "ls")
-                echo -e "\033[1;32m" "\nBACKUP Option (BACKO):"
-                echo "  custsf    - Custom Storage and Custom Folder"
+                echo -e "\033[1;32m" "\nBACKUP COMMAND (BACKC):"
+                echo " 1. custsf    - Custom Storage and Custom Folder"
                 echo "                                              "
                 echo "==>> IF any other backup idea you have then send me on (https://t.me/CYBERMRINAL)"
                 echo -e "\033[0m"  # Reset color
@@ -1501,27 +1516,27 @@ check_sys_status() {
                 send_alert "ALL SYS-STATUS IS SHOWN"
                 ;;
             "help")
-                echo -e "\033[1;32m" "\nCSS Help (CSSH):"
-                echo "  ls     - Show the available security options to start Tor."
-                echo "  cd ..  - Return to the main menu."
-                echo "  clear  - Clear the terminal."
-                echo "  banner - Show the banner."
+                echo -e "\033[1;32m" "\nCSS HELP (CSSH):"
+                echo " 1. ls     - Show the available security options to start Tor."
+                echo " 2. cd ..  - Return to the main menu."
+                echo " 3. clear  - Clear the terminal."
+                echo " 4. banner - Show the banner."
                 echo ""
                 echo -e "\033[1;31m"  # Red color
                 echo ">> By pressing CTRL+C the whole script stops (BE CAREFULL)"
                 echo -e "\033[0m"  # Reset color
                 ;;
             "ls")
-                echo -e "\033[1;32m" "\nCSS Option (CSSO):"
-                echo "  all   - Show all of above in once."
-                echo "  cpu   - Show the cpu information."
-                echo "  pci   - Show all hardware information in detail."
-                echo "  ufws  - Show the ufw status in verbose."
-                echo "  rams  - Show the ram/memory usage status."
-                echo "  rsers - Show the running services."
-                echo "  fails - Show the fail2ban status."
-                echo "  disks - Show the disk spaces in humab readable format."
-                echo "  short - Show CPU, SPEED, KERNEL, UPTIME, MEMORY, STORAGE, etc. lot information. (RECOMMANDED)"
+                echo -e "\033[1;32m" "\nCSS COMMANDS (CSSC):"
+                echo " 1.  all   - Show all of above in once."
+                echo " 2.  cpu   - Show the cpu information."
+                echo " 3.  pci   - Show all hardware information in detail."
+                echo " 4.  ufws  - Show the ufw status in verbose."
+                echo " 5.  rams  - Show the ram/memory usage status."
+                echo " 6.  rsers - Show the running services."
+                echo " 7.  fails - Show the fail2ban status."
+                echo " 9.  disks - Show the disk spaces in humab readable format."
+                echo " 10. short - Show CPU, SPEED, KERNEL, UPTIME, MEMORY, STORAGE, etc. lot information. (RECOMMANDED)"
                 echo -e "\033[0m"  # Reset color
                 ;;
             "banner")
@@ -1669,17 +1684,17 @@ generate_report() {
                 fi
                 ;;
             "ls")
-                echo -e "\033[1;32m" "\nLlinux Defender Reprot Generator Option (LDRGO):"
-                echo "  generate - Generate a new report. (HARDWARE)"
-                echo "  oldlog   - Generate a report from the old log file."
+                echo -e "\033[1;32m" "\nREPORT GENERATOR COMMANDS (RGC):"
+                echo " 1. generate - Generate a new report. (HARDWARE)"
+                echo " 2. oldlog   - Generate a report from the old log file."
                 echo -e "\033[0m"  # Reset color
                 ;;
             "help")
-                echo -e "\033[1;32m" "\nLinux Defender Reprot Generator Help (LDRGH):"
-                echo "  ls     - Show the available security options to start Tor."
-                echo "  cd ..  - Return to the main menu."
-                echo "  clear  - Clear the terminal."
-                echo "  banner - Show the banner."
+                echo -e "\033[1;32m" "\nREPORT GENERATOR HELP (RGH):"
+                echo " 1. ls     - Show the available security options to start Tor."
+                echo " 2. cd ..  - Return to the main menu."
+                echo " 3. clear  - Clear the terminal."
+                echo " 4. banner - Show the banner."
                 echo ""
                 echo -e "\033[1;31m"  # Red color
                 echo ">> By pressing CTRL+C the whole script stops (BE CAREFULL)"
@@ -1802,17 +1817,17 @@ check_integrity() {
                     fi
                     ;;
             "ls")
-                echo -e "\033[1;32m" "\nCheck File Integrity Option (CFIO):"
-                echo "  cfin   - Check File Integrity in normal way. (WITHOUT_COLOR)"
-                echo "  cfiv   - Check File Integrity in verbose way. (WITH_COLOR)"
+                echo -e "\033[1;32m" "\nCHECK FILE INTEGRITY COMMANDS (CFIC):"
+                echo " 1. cfin   - Check File Integrity in normal way. (WITHOUT_COLOR)"
+                echo " 2. cfiv   - Check File Integrity in verbose way. (WITH_COLOR)"
                 echo -e "\033[0m"  # Reset color
                 ;;
             "help")
-                echo -e "\033[1;32m" "\nCheck File Integrity Help (CFIH):"
-                echo "  ls     - Show the available security options to start Tor."
-                echo "  cd ..  - Return to the main menu."
-                echo "  clear  - Clear the terminal."
-                echo "  banner - Show the banner."
+                echo -e "\033[1;32m" "\nCHECK FILE INTEGRITY HELP (CFIH):"
+                echo " 1. ls     - Show the available security options to start Tor."
+                echo " 2. cd ..  - Return to the main menu."
+                echo " 3. clear  - Clear the terminal."
+                echo " 4. banner - Show the banner."
                 echo ""
                 echo -e "\033[1;31m"  # Red color
                 echo ">> By pressing CTRL+C the whole script stops (BE CAREFULL)"
@@ -1927,17 +1942,17 @@ monitor_files() {
                 fi
                 ;;
             "help")
-                echo -e "\033[1;32m" "\nMONITOR Help (MONH):"
-                echo "   ls     - List available tools"
-                echo "   cd ..  - to return to the main menu."
-                echo "   clear  - Clear the terminal"
-                echo "   banner - Show the banner of MONITOR."
+                echo -e "\033[1;32m" "\nMONITOR HELP (MONH):"
+                echo " 1. ls     - List available tools"
+                echo " 2. cd ..  - to return to the main menu."
+                echo " 3. clear  - Clear the terminal"
+                echo " 4. banner - Show the banner of MONITOR."
                 echo -e "\033[0m"  # Reset color
                 ;;
             "ls")
                 echo -e "\033[1;32m" "\nMONITOR Options (MON0):"
-                echo "   iwait - Start monitoring with inotifywait"
-                echo "   iwatch - Start monitoring with inotifywatch"
+                echo " 1. iwait - Start monitoring with inotifywait"
+                echo " 2. iwatch - Start monitoring with inotifywatch"
                 echo -e "\033[0m"  # Reset color
                 ;;
             "clear")
