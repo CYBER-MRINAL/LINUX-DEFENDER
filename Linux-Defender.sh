@@ -735,7 +735,7 @@ update_system() {
 
 update_from_github() {
     local repo="CYBER-MRINAL/LINUX-DEFENDER"  # Exact GitHub repository (case-sensitive)
-    local current_version="v1.1"               # Your current version (update as needed)
+    local current_version="v1.2"               # Your current version (update as needed)
     local latest_version
     local zip_file
     local temp_dir
