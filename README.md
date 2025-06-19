@@ -90,4 +90,4 @@ Built with care and cybersecurity principles by [CYBER-MRINAL](https://github.co
 ## ☕ Support & Contribution
 
 For major changes, open an issue first to discuss what you would like to change.
-If this project helps secure your systems, consider giving it a ⭐ on GitHub and for more queries chat with me [TELEGRAM](https://t.me/cybermrinalgroup/3)
+If this project helps secure your systems, consider giving it a ⭐ on GitHub and for more queries chat with me [TELEGRAM](https://t.me/cybermrinalgroup)
